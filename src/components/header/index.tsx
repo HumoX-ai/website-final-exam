@@ -51,7 +51,10 @@ const Header = () => {
         ))}
       </div>
       <Transition show={open} as={Fragment}>
-        <div className="fixed inset-0 z-40 flex md:hidden">
+        <div
+          className="fixed inset-0 z-40 flex md:hidden"
+          onClick={() => setOpen(false)}
+        >
           <Transition.Child
             enter="transition-opacity ease-linear duration-300"
             enterFrom="opacity-0"
@@ -80,6 +83,7 @@ const Header = () => {
                   <h1
                     className="hover:text-neutral-500 hover:underline cursor-pointer text-[12px] xl:text-lg "
                     key={index}
+                    onClick={() => ScrollTo(item.to)}
                   >
                     {item.title}
                   </h1>
